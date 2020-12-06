@@ -1,0 +1,52 @@
+<div>
+
+  <div style="margin-top: 10px;" class="form-group row">
+    <label for="inputEmail3MD" style="text-align: center;" class="col-sm-2 col-form-label"> Filtruj dla magazynu:
+    </label>
+    <div ngbDropdown class="d-block-inline ">
+      <button class="btn btn-outline-secondary col-sm-15" id="dropdownBasic1" ngbDropdownToggle>{{magazynName}}</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="showAllMagazyny()">Wszystkie</button>
+        <button ngbDropdownItem *ngFor="let magazyn of magazyny"
+          (click)="filterMagazyn(magazyn.idMagazynu, magazyn.nazwa)">{{magazyn.nazwa}}</button>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Imie</th>
+        <th scope="col">Nazwisko</th>
+        <th scope="col">Data zatrudniania</th>
+        <th scope="col">Nazwa magazynu</th>
+        <th scope="col">Stanowisko</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pracownik of pracownicy; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ pracownik.imie }}
+        </td>
+        <td>{{ pracownik.nazwisko }}</td>
+        <td>{{ pracownik.dataZatrudnienia }}</td>
+        <td>{{ getMagazynName(pracownik.magazynId) }}</td>
+        <td>{{ pracownik.stanowisko }}</td>
+        <td>
+          <div>
+            <button style="margin: 2px;" class="btn btn-primary"
+              (click)="editPracownik(pracownik.pracownikId)">Edytuj</button>
+            <button style="margin: 2px;" class="btn btn-danger"
+              (click)="deletePracownik(pracownik.pracownikId)">Usuń</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="form-group " >
+    <button class="btn btn-primary" style="margin: auto; display: block;" (click)="addPracownik()">Dodaj pracownika</button>
+  </div>
+</div>

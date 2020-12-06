@@ -1,0 +1,27 @@
+<div class="container-fluid" style="text-align: center;">
+  <label>Edytuj magazyn</label>
+  <form>
+
+    <div class="form-group row">
+      <div class="col-sm-5" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <div class="md-form mt-1">
+          <label for="inputEmail3MD" class="col-sm-6 col-form-label">Nazwa</label>
+          <input type="text" [(ngModel)]="magazyn.nazwa" name="imie" class="form-control" id="inputEmail3MD"
+            placeholder="imie">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-5" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <div class="md-form mt-1">
+          <label for="inputEmail3MD" class="col-sm-6 col-form-label">Miejscowość</label>
+          <input type="text" [(ngModel)]="magazyn.adres" name="nazwisko" class="form-control" id="inputEmail3MD"
+            placeholder="nazwisko">
+        </div>
+      </div>
+    </div>
+    <div class="form-group horizontal">
+      <button type="button" class="btn btn-success" (click)="editMagazyn()">Edytuj</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nazwa</th>
+        <th scope="col">Miejscowość</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let magazyn of magazyny; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ magazyn.nazwa }}
+        </td>
+        <td>{{ magazyn.adres }}</td>
+        <td>
+          <div>
+            <button class="btn btn-primary" style="margin: 2px;" (click)="editMagazyn(magazyn.idMagazynu)">Edytuj</button>
+            <button class="btn btn-danger " style="margin: 2px;" (click)="deleteMagazyn(magazyn.idMagazynu)">Usuń</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" style="margin: auto; display: block;" (click)="addMagazyn()">Dodaj magazyn</button>
+</div>
