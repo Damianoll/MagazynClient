@@ -8,6 +8,6 @@ Aplikacja do zarządzania magazynami i pracownikami
 - Java Spring Boot
 - Angular 2
 
-#Baza danych: 
+# Baza danych: 
 
 - MongoDB Atlas
